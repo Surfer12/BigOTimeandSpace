@@ -1,3 +1,4 @@
+package AssignmentLeetCode;
 /* # Leet Code 206
 
 ## 206. Reverse Linked List
@@ -36,6 +37,9 @@ Given the head of a singly linked list, reverse the list, and return the reverse
 ### Follow Up:
 A linked list can be reversed either iteratively or recursively. Could you implement both? */
 
+import java.util.LinkedList;
+
 public class ReverseLinkedList {
+   private LinkedList<Integer> list;
 
 }
