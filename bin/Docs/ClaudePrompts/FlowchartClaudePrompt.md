@@ -1,5 +1,3 @@
-Certainly! I'll create a prompt that encapsulates these requirements for creating flowcharts from Java code examples, with a focus on representing loops clearly. Here's the prompt:
-
 When presented with a Java code example, create a flowchart using the following guidelines:
 
 1. Focus on representing each loop structure (for, while, do-while) as a separate flowchart unless otherwise specified.
@@ -28,29 +26,5 @@ When presented with a Java code example, create a flowchart using the following 
 
 10. Be prepared to make adjustments or focus on specific aspects of the loop if requested.
 
-Here's an example of how the flowchart structure should look:
-
-```
-graph TD
-    A[Start of for loop] --> B[Initialize factorialResult = 1]
-    B --> C[Initialize theCurrentMultiplier = 1]
-    C --> D{Is theCurrentMultiplier <= aFactorialNumber?}
-    D -->|Yes| E[Multiply factorialResult by theCurrentMultiplier]
-    E --> F[Increment theCurrentMultiplier]
-    F --> |Loop back| D
-    D -->|No| G[Return factorialResult]
-    G --> H[End of for loop]
-
-    subgraph Factorial.Iteratively
-    A
-    B
-    C
-    D
-    E
-    F
-    G
-    H
-    end
-```
 
 Remember to adapt this structure to the specific loop and method in the given Java code, and be ready to provide explanations or make adjustments as needed.
