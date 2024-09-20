@@ -28,13 +28,14 @@ Recursive Method: Recursively reverses the list and adjusts the links accordingl
 
 */
 
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-}
-
 public class LinkedListReverse {
+    // Anonymous inner class for ListNode
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
+
     // Iterative method to reverse the linked list
     public ListNode reverseListIterative(ListNode head) {
         ListNode prev = null;
