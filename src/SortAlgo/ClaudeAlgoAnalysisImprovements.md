@@ -145,13 +145,12 @@ graph TD
 ```
 
 ### Time and Space Complexity
-
 - **Time Complexity**:
-  - Best Case: O(n^2)
-  - Worst Case: O(n^2)
-  - Average Case: O(n^2)
+  - Best Case: O(n^2) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion.
+  - Worst Case: O(n^2) - When the input is sorted in descending order, the algorithm needs to iterate through the entire array for each element in the unsorted portion.
+  - Average Case: O(n^2) - In most cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.
 
-- **Space Complexity**: O(1) - Selection Sort is an in-place sorting algorithm
+- **Space Complexity**: O(1) - Selection Sort is an in-place sorting algorithm, meaning it doesn't require any extra space other than the input array.
 
 ### Implementation
 
@@ -173,16 +172,7 @@ public static void selectionSort(int[] array) {
         array[i] = temp;
     }
 }
-```
-
-### UML Diagram
-
-```mermaid
-classDiagram
-    class SelectionSort {
-        +selectionSort(int[] array) void
-    }
-```
+````
 
 ### Output Log
 

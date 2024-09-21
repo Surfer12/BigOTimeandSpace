@@ -1,4 +1,4 @@
-# Analysis of Insertion and Selection Sort Algorithms
+# Analysis of Insertion and Selection Sort Algorithms and Their Respective Implementations
 
 ## Introduction
 
@@ -109,7 +109,7 @@ Pass 3: [1, 2, 5, 8, 3] // 1 is inserted at the beginning
 Pass 4: [1, 2, 3, 5, 8] // 3 is inserted into its correct position
 Sorted Array: [1, 2, 3, 5, 8]
 ```
-#### Output Log of the Insertion Sort Algorithm with Enhanced Logging
+#### Output Log of the Insertion Sort Algorithm with Enhanced Logging and Comments
 ```java 
 int [] anArray = [5, 2, 8, 1, 3]
 
@@ -158,9 +158,7 @@ repeat (numOfElements - 1) times
 ```
 (VisualAlgo)
 
-## Selection Sort: Implementation and Enhancements
-
-### Selection Sort Implementation
+## Selection Sort: Implementation
 
 ```java
 /**
@@ -254,9 +252,31 @@ repeat (numOfElements - 1) times
     }
 }
 ```
+### Time and Space Complexity
+- **Time Complexity**:
+  - Best Case: O(n^2) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion.
+  - Worst Case: O(n^2) - When the input is sorted in descending order, the algorithm needs to iterate through the entire array for each element in the unsorted portion.
+  - Average Case: O(n^2) - In most cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.
 
- ### UML Diagram for Selection Sort
-#### Output Log of the Selection Sort Algorithm
+- **Space Complexity**: O(1) - Selection Sort is an in-place sorting algorithm, meaning it doesn't require any extra space other than the input array.
+
+
+ ### Diagram for Selection Sort
+![alt text](InsertionSortLRDiagram.png)
+
+ 
+### Output Log
+
+```
+Original Array: [5, 2, 8, 1, 3]
+Pass 1: [1, 2, 8, 5, 3] // 1 is swapped with 5
+Pass 2: [1, 2, 8, 5, 3] // 2 is already in the correct position
+Pass 3: [1, 2, 3, 5, 8] // 3 is swapped with 8
+Pass 4: [1, 2, 3, 5, 8] // 5 is already in the correct position
+Sorted Array: [1, 2, 3, 5, 8]
+```
+
+#### Output Log of the Selection Sort Algorithm with Enhanced Logging and Comments
 
 
 ```java
@@ -289,11 +309,11 @@ Sorted Array using Selection Sort: [1, 2, 3, 5, 8]
 ### Error Handling and Edge Cases
 
 - **Null Handling**: Similar to Insertion Sort, this method throws an `IllegalArgumentException` for null inputs.
-- **Empty Array**: The algorithm handles empty arrays gracefully, as the outer loop will not execute. 
+
 ### Performance Optimizations
 
 
-- **Minimizing Swaps**: The algorithm only performs a swap if a new minimum is found, reducing unnecessary operations.
+- **Minimizing Swaps**: The algorithm only performs a swap ***if*** a new minimum is found, reducing unnecessary operations.
 
 ## Design Patterns and Architectural Benefits
 
@@ -313,21 +333,7 @@ Both sorting algorithms can be viewed through the lens of design patterns:
 - **Unit Testing**: Implement comprehensive unit tests using JUnit to validate the correctness of the sorting algorithms, including edge cases such as null inputs and empty arrays.
 - **Error Management**: Use custom exceptions to provide more context in error scenarios, enhancing the robustness of the code.
 
-### Example Unit Test
-
-```java
-@Test
-public void testInsertionSortWithNullArray() {
-    assertThrows(IllegalArgumentException.class, () -> {
-        InsertionAndSelectionSort.insertionSort(null);
-    });
-}
 ```
-
-## Conclusion
-
-This enhanced analysis of Insertion Sort and Selection Sort algorithms demonstrates the importance of error handling, performance optimizations, and design patterns in writing professional-grade Java code. By adhering to best practices and focusing on self-documenting code, students can bridge the gap between academic concepts and industry expectations, preparing them for successful careers in software development.
-```
-
 Works Cited
 VisualAlgo. "Sorting." VisualAlgo, 2024, https://visualgo.net/en/sorting?slide=1.
+```
