@@ -86,12 +86,30 @@ public static void insertionSort(int[] anArray) {
         }
     }
 ```
-## Time Complexity Analysis
-- 
+## Time Complexity  and Space Complexity Analysis
+- **Time Complexity**:
+  - **Best Case**: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.
+  - **Worst Case**: O(n^2) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.
+  - **Average Case**: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, and the average case is often close to the worst-case scenario.
 
-### UML Diagram for Insertion Sort
+- **Space Complexity**: O(1) - Insertion Sort is an in-place sorting algorithm meaning it does not require any additional space proportional to the input size. Insertion sort alters the array by shifting elements within the array itself, without creating a new array or using significant extra memory.
 
-#### Output Log of the Insertion Sort Algorithm
+### Diagram for Insertion Sort
+![alt text](InsertionSortLRDiagram.png)
+
+### Output Log with No Logging
+
+### Output Log
+
+```
+Original Array: [5, 2, 8, 1, 3]
+Pass 1: [2, 5, 8, 1, 3] // 2 is inserted into its correct position
+Pass 2: [2, 5, 8, 1, 3] // 8 is already in the correct position
+Pass 3: [1, 2, 5, 8, 3] // 1 is inserted at the beginning
+Pass 4: [1, 2, 3, 5, 8] // 3 is inserted into its correct position
+Sorted Array: [1, 2, 3, 5, 8]
+```
+#### Output Log of the Insertion Sort Algorithm with Enhanced Logging
 ```java 
 int [] anArray = [5, 2, 8, 1, 3]
 
