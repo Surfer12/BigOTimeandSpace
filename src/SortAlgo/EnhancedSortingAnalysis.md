@@ -69,17 +69,15 @@ public static void insertionSort(int[] anArray) {
                                               // it's in the incorrect natural order.
                 anArray[j + 1] = anArray[j]; // sets the value of the element at the current index of j to the value of the
                                          // element at the current index of j+1. This effectively shifts the element at
-                                         // the current index of j to the right by one index to the current index value
-                                         // of the key.
+                                         // the current index of j to the right by one index
                 // This loop shifts elements encountered that greater than `key` to the right
                 // until the condition of the while loop is no longer met.
                 // This means that the key value
 
                 j = j - 1; // decrements j by 1, this serves to ensure that the while loop will continue
                            // from the previous index of j until the condition of the while loop is no
-                           // longer met.
-                // The while continues until an element less than or equal to `key` is found
-                //
+                           // longer met to reach the beginning of the array.
+                // The while continues until an element less than or equal to `key` is found or the beginning of the array is reached.
 
                 System.out.println("Insertion Sort - Array after shifting: " + Arrays.toString(anArray));
             }
@@ -88,6 +86,9 @@ public static void insertionSort(int[] anArray) {
         }
     }
 ```
+## Time Complexity Analysis
+- 
+
 ### UML Diagram for Insertion Sort
 
 #### Output Log of the Insertion Sort Algorithm
@@ -120,13 +121,12 @@ Sorted Array using Insertion Sort: [1, 2, 3, 5, 8]
 ### Error Handling and Edge Cases
 
 - **Null Handling**: The method throws an `IllegalArgumentException` if the input array is null, ensuring that the algorithm does not attempt to process invalid data.
-- **Empty Array**: The algorithm naturally handles empty arrays without additional checks, as the loop will not execute.
 
 ### Performance Optimizations
 
 - **Early Exit**: If the array is already sorted, the algorithm can exit early, reducing unnecessary iterations. This can be implemented by adding a flag to check if any swaps occurred during the iteration.
 
-## Selection Sort: Psuedocode
+## Selection Sort: Psuedocode 
 
 ```
 repeat (numOfElements - 1) times
