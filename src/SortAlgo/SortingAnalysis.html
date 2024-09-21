@@ -1,16 +1,54 @@
-# Analysis of Insertion and Selection Sort Algorithms and Their Respective Implementations
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of Insertion and Selection Sort Algorithms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: visible;
+        white-space: pre-wrap; /* Preserve line breaks */
+        }   
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        @media print {
+        pre {
+            white-space: pre-wrap; /* Ensure long lines wrap in PDF */
+            word-wrap: break-word; /* Handle word wrapping */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        }
+    </style>
+</head>
+<body>
 
-## Introduction
+<h1>Analysis of Insertion and Selection Sort Algorithms and Their Respective Implementations</h1>
 
-This document provides an enhanced analysis of the Insertion Sort and Selection Sort algorithms, focusing on their implementations, error handling, performance, and potential optimizations.
+<h2>Introduction</h2>
+<p>This document provides an enhanced analysis of the Insertion Sort and Selection Sort algorithms, focusing on their implementations, error handling, performance, and potential optimizations.</p>
 
-## Sorting Algorithm Overview
-"Sorting is a very classic problem of reordering items (that can be compared, e.g., integers, floating-point numbers, strings, etc) of an array (or a list) in a certain order (increasing, non-decreasing (increasing or flat), decreasing, non-increasing (decreasing or flat), lexicographical, etc)." (VisualAlgo)
+<h2>Sorting Algorithm Overview</h2>
+<p>"Sorting is a very classic problem of reordering items (that can be compared, e.g., integers, floating-point numbers, strings, etc) of an array (or a list) in a certain order (increasing, non-decreasing (increasing or flat), decreasing, non-increasing (decreasing or flat), lexicographical, etc)." (VisualAlgo)</p>
 
-## Insertion Sort: Psuedocode
-
-```
-mark first element as sorted
+<h2>Insertion Sort: Psuedocode</h2>
+<pre><code>mark first element as sorted
 
 for each unsorted element X
 
@@ -23,13 +61,11 @@ for each unsorted element X
       move sorted element to the right by 1
 
     break loop and insert X here
-```
-(VisualAlgo)
+</code></pre>
+<p>(VisualAlgo)</p>
 
-## Insertion Sort: Implementation and Enhancements
-
-```java
-/**
+<h2>Insertion Sort: Implementation and Enhancements</h2>
+<pre><code>/**
      * Sorts the given array using the Insertion Sort algorithm.
      *
      * @param array. An integer array to be sorted
@@ -85,33 +121,37 @@ public static void insertionSort(int[] anArray) {
             System.out.println("Insertion Sort - Array after inserting key: " + Arrays.toString(anArray));
         }
     }
-```
-## Time Complexity  and Space Complexity Analysis
-- **Time Complexity**:
-  - **Best Case**: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.
-  - **Worst Case**: O(n^2) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.
-  - **Average Case**: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, and the average case is often close to the worst-case scenario.
+</code></pre>
 
-- **Space Complexity**: O(1) - Insertion Sort is an in-place sorting algorithm meaning it does not require any additional space proportional to the input size. Insertion sort alters the array by shifting elements within the array itself, without creating a new array or using significant extra memory.
+<h2>Time Complexity and Space Complexity Analysis</h2>
+<ul>
+    <li><strong>Time Complexity</strong>:
+        <ul>
+            <li><strong>Best Case</strong>: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.</li>
+            <li><strong>Worst Case</strong>: O(n<sup>2</sup>) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.</li>
+            <li><strong>Average Case</strong>: O(n<sup>2</sup>) - The average case time complexity of Insertion Sort is also O(n<sup>2</sup>), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, and the average case is often close to the worst-case scenario.</li>
+        </ul>
+    </li>
+    <li><strong>Space Complexity</strong>: O(1) - Insertion Sort is an in-place sorting algorithm meaning it does not require any additional space proportional to the input size. Insertion sort alters the array by shifting elements within the array itself, without creating a new array or using significant extra memory.</li>
+</ul>
 
-### Diagram for Insertion Sort
-![alt text](InsertionSortLRDiagram.png)
+<h3>Diagram for Insertion Sort</h3>
+<img src="InsertionSortLRDiagram.svg" alt="Insertion Sort Diagram">
 
-### Output Log with No Logging
 
-### Output Log
+<h2>Output Log with No Logging</h2>
 
-```
-Original Array: [5, 2, 8, 1, 3]
+<h2>Output Log</h2>
+<pre><code>Original Array: [5, 2, 8, 1, 3]
 Pass 1: [2, 5, 8, 1, 3] // 2 is inserted into its correct position
 Pass 2: [2, 5, 8, 1, 3] // 8 is already in the correct position
 Pass 3: [1, 2, 5, 8, 3] // 1 is inserted at the beginning
 Pass 4: [1, 2, 3, 5, 8] // 3 is inserted into its correct position
 Sorted Array: [1, 2, 3, 5, 8]
-```
-#### Output Log of the Insertion Sort Algorithm with Enhanced Logging and Comments
-```java 
-int [] anArray = [5, 2, 8, 1, 3]
+</code></pre>
+
+<h3>Output Log of the Insertion Sort Algorithm with Enhanced Logging and Comments</h3>
+<pre><code>int [] anArray = [5, 2, 8, 1, 3]
 
 insertionSort(anArray)
 
@@ -133,18 +173,15 @@ Insertion Sort - Array after shifting: [1, 2, 5, 8, 8] // The inner loop array[j
 Insertion Sort - Array after shifting: [1, 2, 5, 5, 8] // Key value continues to shift to the left until the inner loop conditional is no longer met.
 Insertion Sort - Array after inserting key: [1, 2, 3, 5, 8] // Key value is greater than the value of the element at the current index of j so the inner loop ends and the key value is set to the value of the element at the current index of j+1.
 Sorted Array using Insertion Sort: [1, 2, 3, 5, 8] 
+</code></pre>
 
-```
+<h2>Error Handling and Edge Cases</h2>
+<ul>
+    <li><strong>Null Handling</strong>: The method throws an <code>IllegalArgumentException</code> if the input array is null, ensuring that the algorithm does not attempt to process a null type.</li>
+</ul>
 
-### Error Handling and Edge Cases
-
-- **Null Handling**: The method throws an `IllegalArgumentException` if the input array is null, ensuring that the algorithm does not attempt to process a null type.
-
-
-## Selection Sort: Psuedocode 
-
-```
-repeat (numOfElements - 1) times
+<h2>Selection Sort: Psuedocode</h2>
+<pre><code>repeat (numOfElements - 1) times
 
   set the first unsorted element as the minimum
 
@@ -155,13 +192,11 @@ repeat (numOfElements - 1) times
       set element as new minimum
 
   swap minimum with first unsorted position
-```
-(VisualAlgo)
+</code></pre>
+<p>(VisualAlgo)</p>
 
-## Selection Sort: Implementation
-
-```java
-/**
+<h2>Selection Sort: Implementation</h2>
+<pre><code>/**
      * Sorts the given array using the selection sort algorithm.
      * 
      * @param array the array to be sorted
@@ -223,7 +258,8 @@ repeat (numOfElements - 1) times
                 if (array[j] < array[minIndex]) { // condition to check if the value of the element at the current index
                                                   // of j is less than the value of the element at the minimum index.
                                                   // This will be true if the value of the element at the current index
-                                                  // of j is less than the value of the element at the minimum index
+                                                  // of j is less than the value of the element at the minimum
+                                                  // index
                     minIndex = j; // sets the index of j as the new minimum index since the value of array[j]
                                   // ahead of the minimum index array[i] is less than the value at the minimum
                                   // index
@@ -250,37 +286,33 @@ repeat (numOfElements - 1) times
             }
         }
     }
-}
-```
-### Time and Space Complexity
-- **Time Complexity**:
-  - Best Case: O(n^2) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion.
-  - Worst Case: O(n^2) - When the input is sorted in descending order, the algorithm needs to iterate through the entire array for each element in the unsorted portion.
-  - Average Case: O(n^2) - In most cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.
+</code></pre>
 
-- **Space Complexity**: O(1) - Selection Sort is an in-place sorting algorithm, meaning it doesn't require any extra space other than the input array.
+<h2>Time and Space Complexity</h2>
+<ul>
+    <li><strong>Time Complexity</strong>:
+        <ul>
+            <li><strong>Best Case</strong>: O(n<sup>2</sup>) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion.</li>
+            <li><strong>Worst Case</strong>: O(n<sup>2</sup>) - When the input is sorted in descending order, the algorithm needs to iterate through the entire array for each element in the unsorted portion.</li>
+            <li><strong>Average Case</strong>: O(n<sup>2</sup>) - In most cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.</li>
+        </ul>
+    </li>
+    <li><strong>Space Complexity</strong>: O(1) - Selection Sort is an in-place sorting algorithm, meaning it doesn't require any extra space other than the input array.</li>
+</ul>
 
+<h3>Diagram for Selection Sort</h3>
 
- ### Diagram for Selection Sort
-![alt text](InsertionSortLRDiagram.png)
-
- 
-### Output Log
-
-```
-Original Array: [5, 2, 8, 1, 3]
+<h2>Output Log</h2>
+<pre><code>Original Array: [5, 2, 8, 1, 3]
 Pass 1: [1, 2, 8, 5, 3] // 1 is swapped with 5
 Pass 2: [1, 2, 8, 5, 3] // 2 is already in the correct position
 Pass 3: [1, 2, 3, 5, 8] // 3 is swapped with 8
 Pass 4: [1, 2, 3, 5, 8] // 5 is already in the correct position
 Sorted Array: [1, 2, 3, 5, 8]
-```
+</code></pre>
 
-#### Output Log of the Selection Sort Algorithm with Enhanced Logging and Comments
-
-
-```java
-int [] anArray = [5, 2, 8, 1, 3]
+<h3>Output Log of the Selection Sort Algorithm with Enhanced Logging and Comments</h3>
+<pre><code>int [] anArray = [5, 2, 8, 1, 3]
 
 Output Log:
 selectionSort(anArray)
@@ -303,37 +335,40 @@ Selection Sort - Swapped elements at indices 2 and 4: [1, 2, 3, 5, 8]// Swap
 Selection Sort - Starting index: 3
 Selection Sort - Current j: 4, Current minIndex: 3, Current array: [1, 2, 3, 5, 8] // Swap
 Sorted Array using Selection Sort: [1, 2, 3, 5, 8]
-```
+</code></pre>
 
+<h2>Error Handling and Edge Cases</h2>
+<ul>
+    <li><strong>Null Handling</strong>: Similar to Insertion Sort, this method throws an <code>IllegalArgumentException</code> for null inputs.</li>
+</ul>
 
-### Error Handling and Edge Cases
+<h2>Performance Optimizations</h2>
+<ul>
+    <li><strong>Minimizing Swaps</strong>: The algorithm only performs a swap <em>if</em> a new minimum is found, reducing unnecessary operations.</li>
+</ul>
 
-- **Null Handling**: Similar to Insertion Sort, this method throws an `IllegalArgumentException` for null inputs.
+<h2>Design Patterns and Architectural Benefits</h2>
+<p>Both sorting algorithms can be viewed through the lens of design patterns:</p>
+<ul>
+    <li><strong>Strategy Pattern</strong>: The choice between Insertion Sort and Selection Sort can be encapsulated using the Strategy Pattern, allowing for dynamic selection of the sorting algorithm based on context (e.g., array size, order).</li>
+    <li><strong>Decorator Pattern</strong>: Enhancements such as logging or error handling can be implemented using decorators, allowing for flexible and reusable code.</li>
+</ul>
 
-### Performance Optimizations
+<h2>Relevance in Modern Contexts</h2>
+<ul>
+    <li><strong>Microservices</strong>: Sorting algorithms can be used in microservices for data processing tasks, where efficient sorting is crucial for performance.</li>
+    <li><strong>Reactive Systems</strong>: In reactive programming, sorting can be applied to streams of data, requiring efficient algorithms that can handle real-time data flows.</li>
+    <li><strong>Cloud-Native Applications</strong>: Sorting algorithms are essential in cloud-native applications for data management and processing, where scalability and performance are critical.</li>
+</ul>
 
+<h2>Testing Strategies and Error Management</h2>
+<ul>
+    <li><strong>Unit Testing</strong>: Implement comprehensive unit tests using JUnit to validate the correctness of the sorting algorithms, including edge cases such as null inputs and empty arrays.</li>
+    <li><strong>Error Management</strong>: Use custom exceptions to provide more context in error scenarios, enhancing the robustness of the code.</li>
+</ul>
 
-- **Minimizing Swaps**: The algorithm only performs a swap ***if*** a new minimum is found, reducing unnecessary operations.
+<h3>Works Cited</h3>
+<p>VisualAlgo. "Sorting." VisualAlgo, 2024, <a href="https://visualgo.net/en/sorting?slide=1">https://visualgo.net/en/sorting?slide=1</a>.</p>
 
-## Design Patterns and Architectural Benefits
-
-Both sorting algorithms can be viewed through the lens of design patterns:
-
-- **Strategy Pattern**: The choice between Insertion Sort and Selection Sort can be encapsulated using the Strategy Pattern, allowing for dynamic selection of the sorting algorithm based on context (e.g., array size, order).
-- **Decorator Pattern**: Enhancements such as logging or error handling can be implemented using decorators, allowing for flexible and reusable code.
-
-### Relevance in Modern Contexts
-
-- **Microservices**: Sorting algorithms can be used in microservices for data processing tasks, where efficient sorting is crucial for performance.
-- **Reactive Systems**: In reactive programming, sorting can be applied to streams of data, requiring efficient algorithms that can handle real-time data flows.
-- **Cloud-Native Applications**: Sorting algorithms are essential in cloud-native applications for data management and processing, where scalability and performance are critical.
-
-## Testing Strategies and Error Management
-
-- **Unit Testing**: Implement comprehensive unit tests using JUnit to validate the correctness of the sorting algorithms, including edge cases such as null inputs and empty arrays.
-- **Error Management**: Use custom exceptions to provide more context in error scenarios, enhancing the robustness of the code.
-
-```
-Works Cited
-VisualAlgo. "Sorting." VisualAlgo, 2024, https://visualgo.net/en/sorting?slide=1.
-```
+</body>
+</html>
