@@ -312,27 +312,7 @@ Sorted Array using Selection Sort: [1, 2, 3, 5, 8]
 
 ### Performance Optimizations
 
-
 - **Minimizing Swaps**: The algorithm only performs a swap ***if*** a new minimum is found, reducing unnecessary operations.
-
-## Design Patterns and Architectural Benefits
-
-Both sorting algorithms can be viewed through the lens of design patterns:
-
-- **Strategy Pattern**: The choice between Insertion Sort and Selection Sort can be encapsulated using the Strategy Pattern, allowing for dynamic selection of the sorting algorithm based on context (e.g., array size, order).
-- **Decorator Pattern**: Enhancements such as logging or error handling can be implemented using decorators, allowing for flexible and reusable code.
-
-### Relevance in Modern Contexts
-
-- **Microservices**: Sorting algorithms can be used in microservices for data processing tasks, where efficient sorting is crucial for performance.
-- **Reactive Systems**: In reactive programming, sorting can be applied to streams of data, requiring efficient algorithms that can handle real-time data flows.
-- **Cloud-Native Applications**: Sorting algorithms are essential in cloud-native applications for data management and processing, where scalability and performance are critical.
-
-## Testing Strategies and Error Management
-
-- **Unit Testing**: Implement comprehensive unit tests using JUnit to validate the correctness of the sorting algorithms, including edge cases such as null inputs and empty arrays.
-- **Error Management**: Use custom exceptions to provide more context in error scenarios, enhancing the robustness of the code.
-
 ```
 Works Cited
 VisualAlgo. "Sorting." VisualAlgo, 2024, https://visualgo.net/en/sorting?slide=1.

@@ -195,6 +195,9 @@ Sorted Array using Insertion Sort: [1, 2, 3, 5, 8]
 </code></pre>
 <p>(VisualAlgo)</p>
 
+ <h3>Diagram for Selection Sort</h3>
+<img src="SelectionSortLR.svg" alt="Selection Sort Diagram">
+
 <h2>Selection Sort: Implementation</h2>
 <pre><code>/**
      * Sorts the given array using the selection sort algorithm.
@@ -345,26 +348,6 @@ Sorted Array using Selection Sort: [1, 2, 3, 5, 8]
 <h2>Performance Optimizations</h2>
 <ul>
     <li><strong>Minimizing Swaps</strong>: The algorithm only performs a swap <em>if</em> a new minimum is found, reducing unnecessary operations.</li>
-</ul>
-
-<h2>Design Patterns and Architectural Benefits</h2>
-<p>Both sorting algorithms can be viewed through the lens of design patterns:</p>
-<ul>
-    <li><strong>Strategy Pattern</strong>: The choice between Insertion Sort and Selection Sort can be encapsulated using the Strategy Pattern, allowing for dynamic selection of the sorting algorithm based on context (e.g., array size, order).</li>
-    <li><strong>Decorator Pattern</strong>: Enhancements such as logging or error handling can be implemented using decorators, allowing for flexible and reusable code.</li>
-</ul>
-
-<h2>Relevance in Modern Contexts</h2>
-<ul>
-    <li><strong>Microservices</strong>: Sorting algorithms can be used in microservices for data processing tasks, where efficient sorting is crucial for performance.</li>
-    <li><strong>Reactive Systems</strong>: In reactive programming, sorting can be applied to streams of data, requiring efficient algorithms that can handle real-time data flows.</li>
-    <li><strong>Cloud-Native Applications</strong>: Sorting algorithms are essential in cloud-native applications for data management and processing, where scalability and performance are critical.</li>
-</ul>
-
-<h2>Testing Strategies and Error Management</h2>
-<ul>
-    <li><strong>Unit Testing</strong>: Implement comprehensive unit tests using JUnit to validate the correctness of the sorting algorithms, including edge cases such as null inputs and empty arrays.</li>
-    <li><strong>Error Management</strong>: Use custom exceptions to provide more context in error scenarios, enhancing the robustness of the code.</li>
 </ul>
 
 <h3>Works Cited</h3>
