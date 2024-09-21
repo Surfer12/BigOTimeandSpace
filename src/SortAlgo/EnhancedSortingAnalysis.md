@@ -138,11 +138,8 @@ Sorted Array using Insertion Sort: [1, 2, 3, 5, 8]
 
 ### Error Handling and Edge Cases
 
-- **Null Handling**: The method throws an `IllegalArgumentException` if the input array is null, ensuring that the algorithm does not attempt to process invalid data.
+- **Null Handling**: The method throws an `IllegalArgumentException` if the input array is null, ensuring that the algorithm does not attempt to process a null type.
 
-### Performance Optimizations
-
-- **Early Exit**: If the array is already sorted, the algorithm can exit early, reducing unnecessary iterations. This can be implemented by adding a flag to check if any swaps occurred during the iteration.
 
 ## Selection Sort: Psuedocode 
 
