@@ -72,9 +72,9 @@ public static void insertionSort(int[] anArray) {
                                          // the current index of j to the right by one index
                 // This loop shifts elements encountered that greater than `key` to the right
                 // until the condition of the while loop is no longer met.
-                // This means that the key value
+               
 
-                j = j - 1; // decrements j by 1, this serves to ensure that the while loop will continue
+                j = j - 1; // decrements j by 1, this serves to ensure that the while loop will continue to move towards the beginning of the array. 
                            // from the previous index of j until the condition of the while loop is no
                            // longer met to reach the beginning of the array.
                 // The while continues until an element less than or equal to `key` is found or the beginning of the array is reached.
@@ -86,11 +86,14 @@ public static void insertionSort(int[] anArray) {
         }
     }
 ```
-## Time Complexity  and Space Complexity Analysis
+## Time Complexity  and Space Complexity Analysis of Insertion Sort
 - **Time Complexity**:
   - **Best Case**: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.
+  - **Why?**: The algorithm performs O(n) comparisons and no swaps, efficiently recognizing that no shifts are needed.
   - **Worst Case**: O(n^2) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.
-  - **Average Case**: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, and the average case is often close to the worst-case scenario.
+  - **Why?**: The algorithm performs O(n^2) comparisons and swaps, as it needs to shift elements to their correct positions one by one.
+  - **Average Case**: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, leading to approximately half the comparisons and shifts compared to the worst case, but still resulting in a quadratic time complexity overall as this is a nested loop.
+  - **Why?**: The average case assumes a random order of elements, leading to approximately half the comparisons and shifts compared to the worst case.
 
 - **Space Complexity**: O(1) - Insertion Sort is an in-place sorting algorithm meaning it does not require any additional space proportional to the input size. Insertion sort alters the array by shifting elements within the array itself, without creating a new array or using significant extra memory.
 
@@ -136,7 +139,7 @@ Sorted Array using Insertion Sort: [1, 2, 3, 5, 8]
 
 ```
 
-### Error Handling and Edge Cases
+### Error Handling and Edge Cases 
 
 - **Null Handling**: The method throws an `IllegalArgumentException` if the input array is null, ensuring that the algorithm does not attempt to process a null type.
 
@@ -252,11 +255,11 @@ repeat (numOfElements - 1) times
     }
 }
 ```
-### Time and Space Complexity
+### Time and Space Complexity of Selection Sort
 - **Time Complexity**:
-  - Best Case: O(n^2) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion.
+  - Best Case: O(n^2) - When the input is already sorted in ascending order, the algorithm still needs to iterate through the entire array to find the minimum element in the unsorted portion. 
   - Worst Case: O(n^2) - When the input is sorted in descending order, the algorithm needs to iterate through the entire array for each element in the unsorted portion.
-  - Average Case: O(n^2) - In most cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.
+  - Average Case: O(n^2) - In all cases, the algorithm needs to iterate through the entire array for each element in the unsorted portion, leading to a quadratic time complexity.
 
 - **Space Complexity**: O(1) - Selection Sort is an in-place sorting algorithm, meaning it doesn't require any extra space other than the input array as described earlier in the analysis of the insertion sort algorithm.
 
@@ -313,6 +316,26 @@ Sorted Array using Selection Sort: [1, 2, 3, 5, 8]
 ### Performance Optimizations
 
 - **Minimizing Swaps**: The algorithm only performs a swap ***if*** a new minimum is found, reducing unnecessary operations.
+
+## Key Differences in Time Complexity
+
+- The time complexity of the algorithms highlights their efficiency differences.
+
+- **Insertion Sort**: Constructs the sorted portion from left to right by inserting each element into its correct position within the already sorted subarray. This makes Insertion Sort more efficient for small or partially sorted datasets compared to Selection Sort.
+
+- **Selection Sort**: Constructs the sorted portion from left to right by repeatedly selecting the minimum element from the unsorted portion and swapping it with the first unsorted element.
+
+### Time Complexity Analysis
+
+- **Insertion Sort**:
+  - **Best Case**: O(n) - When the input is already sorted, the algorithm only needs to iterate through the array once, confirming it's sorted.
+  - **Reason**: It builds the sorted portion incrementally, inserting elements as needed.
+
+- **Selection Sort**:
+  - **Best Case**: O(n²) - Even if the input is sorted, the algorithm must still iterate through the entire array for each element in the unsorted portion.
+  - **Reason**: It repeatedly selects the minimum element from the unsorted portion, requiring full traversal for each selection.
+
+
 ```
 Works Cited
 VisualAlgo. "Sorting." VisualAlgo, 2024, https://visualgo.net/en/sorting?slide=1.
