@@ -1,5 +1,0 @@
-To make the flowchart wider, you can adjust the graph direction and spacing parameters. However, Mermaid does not provide a direct way to set the diagram width explicitly. Instead, you can influence the spacing and alignment to achieve a wider look by using techniques such as changing the direction of the flow, adding some invisible nodes to force spacing, or even by breaking long labels into shorter ones.
-
-Here's an updated version of your diagram where I will change the graph direction to LR (Left to Right) and break down the subgraph labels to make it wider:
-
-Here, graph LR instead of graph TD changes the rendering direction from top-down to left-right, effectively making the chart wider. Additionally, multiline labels with \n help make nodes narrower and taller, adding to the overall width of the graph.

@@ -1,4 +1,4 @@
-package AssignmentLeetCode;
+package AssignmentLeetCodeLinkedList;
 
 
 
