@@ -1,0 +1,5 @@
+-. Logarithm and Exponentiation, e.g., log2(1024) = 10, 210 = 1024
+-. Arithmetic progression, e.g., 1+2+3+4+…+10 = 10*11/2 = 55
+-. Geometric progression, e.g., 1+2+4+8+..+1024 = 1*(1-211)/(1-2) = 2047
+-. Linear/Quadratic/Cubic function, e.g., f1(x) = x+2, f2(x) = x2+x-1, f3(x) = x3+2x2-x+7
+-. Ceiling, Floor, and Absolute function, e.g., ceil(3.1) = 4, floor(3.1) = 3, abs(-7) = 7
