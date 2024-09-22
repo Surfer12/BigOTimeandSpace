@@ -71,11 +71,15 @@ public static void insertionSort(int[] anArray) {
 
 ## Time Complexity  and Space Complexity Analysis of Insertion Sort
 - **Time Complexity**:
-  - **Best Case**: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.
-  - **Worst Case**: O(n^2) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.
-  - **Average Case**: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, leading to approximately half the comparisons and shifts compared to the worst case, but still resulting in a quadratic time complexity overall as this is a nested loop.
+  - Best Case: O(n) - This occurs when the array is already sorted. In this scenario, Insertion Sort only needs to iterate through the array once to confirm it's already sorted, resulting in a linear time complexity.
+  - Worst Case: O(n^2) - This occurs when the array is sorted in reverse order. In this scenario, Insertion Sort needs to perform the maximum number of comparisons and swaps, leading to a quadratic time complexity.
+  - Average Case: O(n^2) - The average case time complexity of Insertion Sort is also O(n^2), which is the same as the worst-case scenario. This is because the algorithm's performance is heavily influenced by the initial order of the array, leading to approximately half the comparisons and shifts compared to the worst case, but still resulting in a quadratic time complexity overall as this is a nested loop.
 
 - **Space Complexity**: O(1) - Insertion Sort is an in-place sorting algorithm meaning it does not require any additional space proportional to the input size. Insertion sort alters the array by shifting elements within the array itself, without creating a new array or using significant extra memory.
+
+### Stability of Insertion Sort
+
+- Insertion Sort is a stable sort. This means that if two elements are equal, their relative order is preserved in the sorted output.
 
 ### Diagram for Insertion Sort
 ![alt text](InsertionSortLRDiagram.svg)
@@ -121,11 +125,6 @@ Insertion Sort - Array after shifting: [1, 2, 5, 5, 8] // Element 5 is shifted r
 Insertion Sort - Array after inserting key: [1, 2, 3, 5, 8] // Key 3 is inserted at its correct position
 
 Sorted Array using Insertion Sort: [1, 2, 3, 5, 8] // Final sorted array
-````
-
-**Explanation:**
-- Enhanced comments for clarity and readability, breaking down each step and providing context for the operations performed during the insertion sort process.
-
 ```
 
 ### Error Handling and Edge Cases 
@@ -161,7 +160,7 @@ repeat (numOfElements - 1) times
  * It repeatedly selects the minimum element from the unsorted portion and swaps it with
  * the first unsorted element.
  *
- * @param array the array to be sorted; must not be null or empty
+ * @param array the array to be sorted; must not be null or empty    
  * @throws IllegalArgumentException if the input array is null or empty
  */
 public static void selectionSort(int[] array) {
@@ -258,11 +257,14 @@ Sorted Array using Selection Sort: [1, 2, 3, 5, 8]; // Final sorted array
 ```
 
 
-### Error Handling and Edge Cases
+### Error Handling
 
 - **Null Handling**: Similar to Insertion Sort, this method throws an `IllegalArgumentException` for null inputs.
 - **Empty Array Handling**: Similar to Insertion Sort, this method throws an `IllegalArgumentException` for empty arrays.
 
+### Stability of Selection Sort
+
+- Selection Sort is not a stable sort. This means that if two elements are equal, their relative order is not guaranteed to be preserved in the sorted output.
 
 ## Key Differences in Time Complexity
 
@@ -300,7 +302,6 @@ Scenarios where Selection Sort might be preferred:
 
 ```
 Works Cited
-```
-```
+
 VisualAlgo. "Sorting." VisualAlgo, 2024, https://visualgo.net/en/sorting?slide=1.
 ```
